@@ -44,7 +44,7 @@ export default function Intro() {
     <div className="grain" aria-hidden="true" />
     <header className="intro-top">
       <img className="side-logo logo-department" src="/assets/jtech-department-logo.png" alt="JTECH Computer Science and Software Engineering department logo" />
-      <img className="side-logo logo-jtech" src="/assets/jtech-mark.jpeg" alt="JTECH logo" />
+      <img className="side-logo logo-jtech" src="/assets/jtech-event-logo.png" alt="JTECH logo" />
     </header>
     <button className="skip-button" onClick={finish} aria-label="Skip intro">Skip intro <span aria-hidden="true">↗</span></button>
     <div className="scene scene-void" />
