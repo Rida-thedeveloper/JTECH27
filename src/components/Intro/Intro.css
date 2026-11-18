@@ -126,3 +126,13 @@
 
 /* Ease the tight JTECH wordmark tracking while preserving its compact shape. */
 .hero-mark{letter-spacing:-.055em}
+
+/* Match the logo footprints and keep the year punctuation visibly raised. */
+.logo-department,.logo-jtech{width:clamp(52px,4.5vw,60px);height:clamp(52px,4.5vw,60px)}
+.mark-year{display:inline-flex;align-items:flex-start;gap:.025em}
+.year-apostrophe{position:relative;top:-.15em;font-size:.72em;line-height:1;color:#ffd36e;text-shadow:0 0 6px #ffd36e66}
+.year-underline-path{stroke-width:2;stroke-linecap:round}
+@media(max-width:640px){
+  .logo-department,.logo-jtech{width:46px;height:46px}
+  .intro-word{text-shadow:0 0 18px #f09bca44}
+}

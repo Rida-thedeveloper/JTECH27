@@ -1,11 +1,14 @@
 import { gsap } from 'gsap'
 
 export function buildIntroTimeline(root: HTMLElement, onComplete: () => void) {
+  const mobile = window.matchMedia('(max-width: 640px)').matches
+  const letterBlur = mobile ? 'blur(0px)' : 'blur(8px)'
+  const letterStagger = mobile ? .018 : .035
   const q = (selector: string) => root.querySelector(selector)
   const qAll = (selector: string) => root.querySelectorAll(selector)
   gsap.set(qAll('.scene'), { autoAlpha: 0 })
   gsap.set('.intro-word', { yPercent: 110, rotateX: -70, opacity: 1, filter: 'blur(0px)', transformOrigin: '50% 100%' })
-  gsap.set('.kinetic-letter', { yPercent: 115, scale: .84, opacity: 0, filter: 'blur(8px)', transformOrigin: '50% 100%' })
+  gsap.set('.kinetic-letter', { yPercent: 115, scale: mobile ? .96 : .84, opacity: 0, filter: letterBlur, transformOrigin: '50% 100%' })
   gsap.set('.hero-mark', { autoAlpha: 0, scale: .84, filter: 'blur(18px)' })
   gsap.set('.year-reel-track', { yPercent: 0 })
   gsap.set('.year-step-final', { scale: 1, textShadow: '0 0 0 transparent', transformOrigin: '50% 55%' })
@@ -25,20 +28,20 @@ export function buildIntroTimeline(root: HTMLElement, onComplete: () => void) {
 
     .to(q('.scene-innovation'), { autoAlpha: 1, duration: .14 }, .38)
     .to('.word-innovation', { yPercent: 0, rotateX: 0, duration: .52, ease: 'power4.out' }, .54)
-    .to('.word-innovation .kinetic-letter', { yPercent: 0, scale: 1, opacity: 1, filter: 'blur(0px)', duration: .38, stagger: .035, ease: 'back.out(1.4)' }, .60)
-    .to('.word-innovation', { yPercent: -18, opacity: 0, filter: 'blur(7px)', duration: .24, ease: 'power2.in' }, 1.34)
+    .to('.word-innovation .kinetic-letter', { yPercent: 0, scale: 1, opacity: 1, filter: 'blur(0px)', duration: mobile ? .32 : .38, stagger: letterStagger, ease: mobile ? 'power2.out' : 'back.out(1.4)' }, .60)
+    .to('.word-innovation', { yPercent: -18, opacity: 0, filter: mobile ? 'blur(0px)' : 'blur(7px)', duration: .24, ease: 'power2.in' }, 1.34)
     .to(q('.scene-innovation'), { autoAlpha: 0, duration: .2 }, 1.52)
 
     .to(q('.scene-creativity'), { autoAlpha: 1, duration: .14 }, 1.64)
     .to('.word-creativity', { yPercent: 0, rotateX: 0, duration: .52, ease: 'power4.out' }, 1.80)
-    .to('.word-creativity .kinetic-letter', { yPercent: 0, scale: 1, opacity: 1, filter: 'blur(0px)', duration: .38, stagger: .035, ease: 'back.out(1.4)' }, 1.86)
-    .to('.word-creativity', { yPercent: -18, opacity: 0, filter: 'blur(7px)', duration: .24, ease: 'power2.in' }, 2.60)
+    .to('.word-creativity .kinetic-letter', { yPercent: 0, scale: 1, opacity: 1, filter: 'blur(0px)', duration: mobile ? .32 : .38, stagger: letterStagger, ease: mobile ? 'power2.out' : 'back.out(1.4)' }, 1.86)
+    .to('.word-creativity', { yPercent: -18, opacity: 0, filter: mobile ? 'blur(0px)' : 'blur(7px)', duration: .24, ease: 'power2.in' }, 2.60)
     .to(q('.scene-creativity'), { autoAlpha: 0, duration: .2 }, 2.78)
 
     .to(q('.scene-technology'), { autoAlpha: 1, duration: .14 }, 2.90)
     .to('.word-technology', { yPercent: 0, rotateX: 0, duration: .52, ease: 'power4.out' }, 3.06)
-    .to('.word-technology .kinetic-letter', { yPercent: 0, scale: 1, opacity: 1, filter: 'blur(0px)', duration: .38, stagger: .035, ease: 'back.out(1.4)' }, 3.12)
-    .to('.word-technology', { yPercent: -18, opacity: 0, filter: 'blur(7px)', duration: .24, ease: 'power2.in' }, 3.86)
+    .to('.word-technology .kinetic-letter', { yPercent: 0, scale: 1, opacity: 1, filter: 'blur(0px)', duration: mobile ? .32 : .38, stagger: letterStagger, ease: mobile ? 'power2.out' : 'back.out(1.4)' }, 3.12)
+    .to('.word-technology', { yPercent: -18, opacity: 0, filter: mobile ? 'blur(0px)' : 'blur(7px)', duration: .24, ease: 'power2.in' }, 3.86)
     .to(q('.scene-technology'), { autoAlpha: 0, duration: .2 }, 4.04)
 
     .to(q('.scene-reveal'), { autoAlpha: 1, duration: .2 }, 4.16)
