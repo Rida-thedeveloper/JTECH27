@@ -11,6 +11,7 @@ export function buildIntroTimeline(root: HTMLElement, onComplete: () => void) {
   gsap.set('.year-step-final', { scale: 1, textShadow: '0 0 0 transparent', transformOrigin: '50% 55%' })
   gsap.set('.tagline', { autoAlpha: 0, y: 18, letterSpacing: '.65em' })
   gsap.set('.year-step-final', { color: '#ffd36e', textShadow: '0 0 8px #ffd36e55' })
+  gsap.set('.year-underline', { scaleX: 0, autoAlpha: 0, transformOrigin: 'left center' })
   gsap.set('.tagline-word', { color: '#dce7fb', textShadow: '0 0 0 transparent' })
   gsap.set('.reveal-attribution', { autoAlpha: 0, y: 12 })
   gsap.set(qAll('.side-logo'), { autoAlpha: 0, y: 8, scale: .96 })
@@ -49,6 +50,7 @@ export function buildIntroTimeline(root: HTMLElement, onComplete: () => void) {
     .to('.tagline', { autoAlpha: 1, y: 0, letterSpacing: '.28em', duration: .62, ease: 'power2.out' }, 5.10)
     .to('.year-step-final', { scale: 1.2, color: '#fff0bd', textShadow: '0 0 10px #ffd36e, 0 0 20px #ffd36e', duration: .2, ease: 'power2.out' }, 6.44)
     .to('.year-step-final', { scale: 1, color: '#ffd36e', textShadow: '0 0 8px #ffd36e55', duration: .42, ease: 'back.out(2)' }, 6.64)
+    .to('.year-underline', { scaleX: 1, autoAlpha: 1, duration: .52, ease: 'power2.out' }, 6.48)
     .to('.tagline-beyond', { color: '#62eaff', textShadow: '0 0 10px #62eaff88', duration: .34, ease: 'power2.out' }, 7.08)
     .to('.tagline-the', { color: '#f39acb', textShadow: '0 0 10px #f39acb88', duration: .34, ease: 'power2.out' }, 7.44)
     .to('.tagline-future', { color: '#c6a0ff', textShadow: '0 0 10px #c6a0ff99', duration: .42, ease: 'power2.out' }, 7.80)
@@ -75,5 +77,6 @@ export function finishIntro(root: HTMLElement) {
   gsap.set(root.querySelector('.tagline-the'), { color: '#f39acb', textShadow: '0 0 10px #f39acb88' })
   gsap.set(root.querySelector('.tagline-future'), { color: '#c6a0ff', textShadow: '0 0 10px #c6a0ff99' })
   gsap.set(root.querySelector('.year-step-final'), { scale: 1, color: '#ffd36e', textShadow: '0 0 8px #ffd36e55' })
+  gsap.set(root.querySelector('.year-underline'), { scaleX: 1, autoAlpha: 1 })
   gsap.set(root.querySelector('.transition-wash'), { autoAlpha: 0, scaleY: 0 })
 }
