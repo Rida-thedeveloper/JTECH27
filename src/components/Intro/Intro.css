@@ -113,3 +113,6 @@
 .hero-mark{transform:none;translate:-50% -50%}
 .reveal-attribution{transform:none;translate:-50% 0}
 .tagline{transform:none;translate:-50% -50%}
+
+/* On phones, remove the inset reveal sheen that reads like a separate video frame. */
+@media(max-width:640px){.scene-reveal:after{display:none}}
