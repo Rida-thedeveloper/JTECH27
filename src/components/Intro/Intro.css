@@ -119,3 +119,7 @@
 
 /* On phones, remove the inset reveal sheen that reads like a separate video frame. */
 @media(max-width:640px){.scene-reveal:after{display:none}}
+
+/* Straight, restrained underline beneath the year. */
+.year-underline{bottom:-.3em;height:.4em}
+.year-underline-path{stroke-width:2.4}
