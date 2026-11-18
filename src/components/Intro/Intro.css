@@ -138,9 +138,9 @@
 }
 
 /* Larger matching corner logos and clearer reveal attribution. */
-.logo-department,.logo-jtech{width:clamp(64px,6vw,78px);height:clamp(64px,6vw,78px)}
-.logo-department{border-radius:50%;object-fit:contain;padding:2px;background:#fff;border:1px solid #ffffff70;box-shadow:0 4px 20px #0008,0 0 20px #c5448530}
+.logo-department,.logo-jtech{width:clamp(76px,7.2vw,94px);height:clamp(76px,7.2vw,94px)}
+.logo-department{border-radius:0;object-fit:contain;padding:0;background:transparent;border:0;box-shadow:0 4px 20px #0008}
 .reveal-attribution span:first-child{font-size:clamp(9px,1.15vw,14px)}
 .reveal-attribution span:last-child{font-size:clamp(9px,1.05vw,13px)}
-@media(max-width:640px){.logo-department,.logo-jtech{width:58px;height:58px}.reveal-attribution{width:calc(100vw - 36px);white-space:normal}.reveal-attribution span:first-child{font-size:clamp(9px,2.55vw,10px);letter-spacing:.035em}.reveal-attribution span:last-child{font-size:clamp(9px,2.4vw,10px);letter-spacing:.07em}}
+@media(max-width:640px){.logo-department,.logo-jtech{width:76px;height:76px}.reveal-attribution{width:calc(100vw - 36px);white-space:normal}.reveal-attribution span:first-child{font-size:clamp(9px,2.55vw,10px);letter-spacing:.035em}.reveal-attribution span:last-child{font-size:clamp(9px,2.4vw,10px);letter-spacing:.07em}}
 
