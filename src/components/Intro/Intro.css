@@ -123,3 +123,6 @@
 /* Straight, restrained underline beneath the year. */
 .year-underline{bottom:-.3em;height:.4em}
 .year-underline-path{stroke-width:2.4}
+
+/* Ease the tight JTECH wordmark tracking while preserving its compact shape. */
+.hero-mark{letter-spacing:-.055em}
