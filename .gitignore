@@ -3,3 +3,4 @@ dist/
 work/
 .DS_Store
 Thumbs.db
+.vercel

@@ -104,3 +104,7 @@
 @media(prefers-reduced-motion:reduce){.year-reel-track{transform:translateY(-75%)}}
 .year-step-final{color:#ffd36e;text-shadow:0 0 8px #ffd36e55;transform-origin:50% 55%}
 .tagline-word{display:inline-block;white-space:nowrap}
+
+/* Phone refinements: group the reveal copy with its mark and enlarge the skip target. */
+.reveal-attribution{bottom:calc(50% + var(--mark-half) + 40px)}
+@media(max-width:640px){.reveal-attribution{gap:6px}.reveal-attribution span:first-child{font-size:clamp(8px,2.25vw,9px);letter-spacing:.06em}.reveal-attribution span:last-child{font-size:clamp(8px,2.05vw,8.5px);letter-spacing:.1em}.skip-button{min-height:44px;padding:11px 12px}}
