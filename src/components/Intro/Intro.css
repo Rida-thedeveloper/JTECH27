@@ -136,6 +136,3 @@
   .logo-department,.logo-jtech{width:46px;height:46px}
   .intro-word{text-shadow:0 0 18px #f09bca44}
 }
-
-/* Show the emblem from the supplied department artwork in the left logo slot. */
-.logo-department{object-fit:cover;object-position:center top;padding:0}
