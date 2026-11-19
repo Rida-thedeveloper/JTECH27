@@ -23,6 +23,7 @@ export function buildIntroTimeline(root: HTMLElement, onComplete: () => void) {
   gsap.set('.transition-wash', { autoAlpha: 0, scaleY: 0, transformOrigin: 'bottom' })
 
   const tl = gsap.timeline({ onComplete })
+  window.__jtechRevealAt = performance.now() + 6.44 * 1000
   // Seven clean typographic beats; every word shares one center point.
   tl.to(q('.scene-void'), { autoAlpha: 1, duration: .4 }, 0)
     .to(q('.scene-void'), { autoAlpha: 0, duration: .18 }, .24)
@@ -64,9 +65,9 @@ export function buildIntroTimeline(root: HTMLElement, onComplete: () => void) {
     .to('.tagline-future', { color: '#c6a0ff', textShadow: '0 0 10px #c6a0ff99', duration: .42, ease: 'power2.out' }, 7.80)
 
     // Scene seven is a quiet light transition behind the same, single title.
-    .to('.transition-wash', { autoAlpha: .68, scaleY: 1, duration: .72, ease: 'power2.inOut' }, 8.27)
-    .to('.transition-wash', { autoAlpha: 0, duration: .72, ease: 'power2.out' }, 9.27)
-    .to({}, { duration: .35 }, 9.97)
+    .to('.transition-wash', { autoAlpha: .82, scaleY: 1, duration: .22, ease: 'power2.inOut' }, 7.02)
+    .to('.transition-wash', { autoAlpha: 0, duration: .3, ease: 'power2.out' }, 7.24)
+    .to({}, { duration: .06 }, 7.54)
   return tl
 }
 

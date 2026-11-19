@@ -9,7 +9,7 @@ function KineticWord({ word, className }: { word: string; className: string }) {
   </span>
 }
 
-export default function Intro() {
+export default function Intro({ onComplete }: { onComplete?: () => void }) {
   const rootRef = useRef<HTMLElement>(null)
   const timelineRef = useRef<gsap.core.Timeline | null>(null)
   const [complete, setComplete] = useState(false)
@@ -19,13 +19,14 @@ export default function Intro() {
     timelineRef.current?.kill()
     if (rootRef.current) finishIntro(rootRef.current)
     setComplete(true)
-  }, [])
+    onComplete?.()
+  }, [onComplete])
   const play = useCallback(() => {
     if (!rootRef.current) return
     setComplete(false)
     timelineRef.current?.kill()
     if (reduced) { finishIntro(rootRef.current); setComplete(true); return }
-    timelineRef.current = buildIntroTimeline(rootRef.current, () => setComplete(true))
+    timelineRef.current = buildIntroTimeline(rootRef.current, () => { setComplete(true); onComplete?.() })
   }, [reduced])
   useEffect(() => {
     const media = window.matchMedia('(prefers-reduced-motion: reduce)')
